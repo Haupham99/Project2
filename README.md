@@ -1,0 +1,5 @@
+-- 1. Phân tích (SRS)
+-- 2. Thiết kế (SDD)
+-- 3. Đặc tả kiểm thử (test case)
+-- 4. Kiểm thử (kết quả test)
+-- 5. Source code ở trong thư mục src
