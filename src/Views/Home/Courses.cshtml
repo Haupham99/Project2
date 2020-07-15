@@ -1,0 +1,134 @@
+﻿@model CoursesViewModel
+@section hero {
+    <div class="page-header-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <header class="entry-header">
+                        <h1>Courses Online</h1>
+                    </header><!-- .entry-header -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .page-header-overlay -->
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="breadcrumbs">
+                <ul class="flex flex-wrap align-items-center p-0 m-0">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li>Courses</li>
+                </ul>
+            </div><!-- .breadcrumbs -->
+        </div><!-- .col -->
+    </div><!-- .row -->
+
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <div class="featured-courses courses-wrap courses">
+                <h2 class="title"></h2>
+                <div class="row mx-m-25 list-category">
+                    @foreach (var course in Model.courses)
+                    {
+                        <div class="col-12 col-md-6 px-25">
+                            <div class="course-content">
+                                <figure class="course-thumbnail">
+                                    <a asp-controller="home" asp-action="course" asp-route-id="@course.id"><img src="images/2.jpg" alt=""></a>
+                                </figure><!-- .course-thumbnail -->
+
+                                <div class="course-content-wrap">
+                                    <header class="entry-header">
+                                        <h2 class="entry-title"><a asp-controller="home" asp-action="course" asp-route-id="@course.id">@(course.name ?? "Hậu")</a></h2>
+
+                                        <div class="entry-meta flex flex-wrap align-items-center">
+                                            <div class="course-author"><a asp-controller="home" asp-action="course" asp-route-id="@course.id">@course.teacher</a></div>
+
+                                            <div class="course-date"></div>
+                                        </div><!-- .course-date -->
+                                    </header><!-- .entry-header -->
+
+                                    <footer class="entry-footer flex flex-wrap justify-content-between align-items-center">
+                                        <div class="course-cost">
+                                            <span class="free-cost">Free</span>
+                                        </div><!-- .price-drop -->
+                                    </footer><!-- .entry-footer -->
+                                </div><!-- .course-content-wrap -->
+                            </div><!-- .course-content -->
+                        </div><!-- .col -->
+                    }
+
+
+
+                </div><!-- .row -->
+            </div><!-- .featured-courses -->
+
+            
+        </div><!-- .col -->
+
+        <div class="col-12 col-lg-4">
+            <div class="sidebar">
+
+                <div class="cat-links">
+                    <h2>Categories</h2>
+
+                    <ul class="p-0 m-0">
+                        @foreach (var category in Model.categories)
+                        {
+                            <li style="cursor: pointer" class="get-course-by-category" name="@category.id">@category.name</li>
+                        }
+                    </ul>
+                </div><!-- .cat-links -->
+
+
+            </div><!-- .sidebar -->
+        </div><!-- .col -->
+    </div><!-- .row -->
+</div><!-- .container -->
+@section script {
+    <script>
+        $(".get-course-by-category").click(function () {
+            $.ajax({
+                type: 'GET',
+                url: "https://localhost:44391/course/category/" + $(this).attr("name"),
+                contentType: "application/json; charset=utf-8",
+                headers: {
+                    "project": "rd-test",
+                    "apikey": "r6fArtu86fTvdertojf5Hferdcbhmr3U"
+                },
+                success: function (data) {
+                    var text = "";
+                    for (var i = 0; i < data.length; i++) {
+                        text += `<div class="col-12 col-md-6 px-25">
+                            <div class="course-content">
+                                <figure class="course-thumbnail">
+                                    <a href="home/course/` + data[i]["id"] +`"><img src="images/2.jpg" alt=""></a>
+                                </figure><!-- .course-thumbnail -->
+
+                                <div class="course-content-wrap">
+                                    <header class="entry-header">
+                                        <h2 class="entry-title"><a href="home/course/` + data[i]["id"] + `">` + data[i]["name"] + `</a></h2>
+
+                                        <div class="entry-meta flex flex-wrap align-items-center">
+                                            <div class="course-author"><a href="home/course/`+ data[i]["id"] + `">` + data[i]["teacher"] +`</a></div>
+
+                                            <div class="course-date"></div>
+                                        </div><!-- .course-date -->
+                                    </header><!-- .entry-header -->
+
+                                    <footer class="entry-footer flex flex-wrap justify-content-between align-items-center">
+                                        <div class="course-cost">
+                                            <span class="free-cost">Free</span>
+                                        </div><!-- .price-drop -->
+                                    </footer><!-- .entry-footer -->
+                                </div><!-- .course-content-wrap -->
+                            </div><!-- .course-content -->
+                        </div><!-- .col -->`;
+                    }
+                    $(".list-category").html(text);
+                }
+            });
+        });
+    </script>
+    
+}

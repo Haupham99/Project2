@@ -1,0 +1,149 @@
+﻿@model CourseViewModel
+@section hero {
+    <div class="page-header-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <header class="entry-header">
+                        <h1 class="entry-title">@Model.course.name</h1>
+
+
+                    </header><!-- .entry-header -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .page-header-overlay -->
+}
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-12 offset-lg-1 col-lg-1">
+            <div class="post-share">
+                <h3>share</h3>
+
+                <ul class="flex flex-wrap align-items-center p-0 m-0">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-thumb-tack"></i></a></li>
+                </ul>
+            </div><!-- .post-share -->
+        </div><!-- .col -->
+
+        <div class="col-12 col-lg-8">
+            <div class="single-course-wrap">
+                <div class="course-info flex flex-wrap align-items-center">
+                    <div class="course-author flex flex-wrap align-items-center mt-3">
+
+
+                        <div class="author-wrap">
+                            <label class="m-0">Teacher</label>
+                            <div class="author-name"><a href="#">@Model.course.teacher</a></div>
+                        </div><!-- .author-wrap -->
+                    </div><!-- .course-author -->
+
+                    <div class="course-cats mt-3">
+                        @*<label class="m-0">Categories</label>
+                            <div class="author-name"><a href="#">@Model.category_id</a></div>*@
+                    </div><!-- .course-cats -->
+
+                    <div class="course-students mt-3">
+                        @*<label class="m-0">Student</label>
+                            <div class="author-name"><a href="#">26 (REGISTERED)</a></div>*@
+                    </div><!-- .course-students -->
+                </div><!-- .course-info -->
+
+                <div class="single-course-cont-section">
+                    @*<h2>What Will I Learn?</h2>
+
+                            <ul class="p-0 m-0 green-ticked">
+                                <li>Learn C++, the games industry standard language.</li>
+                                <li>Develop strong and transferrable problem solving skills.</li>
+                                <li>Gain an excellent knowledge of modern game development.</li>
+                                <li>Learn how object oriented programming works in practice.</li>
+                                <li>Gain a more fundamental understanding of computer operation.</li>
+                            </ul>
+
+                            <h2>Requirements</h2>
+
+                            <ul class="p-0 m-0 black-doted">
+                                <li>64-bit PC capable of running Unreal 4 (recommended).</li>
+                                <li>Or a Mac capable of running Unreal 4 (must support Metal).</li>
+                                <li>About 15GB of free disc space.</li>
+                            </ul>
+
+                            <h2>Description</h2>
+
+                            <p>EW Testing Grounds FPS shipped, including...</p>
+                            <p>Much more C++ and Blueprint.</p>
+                            <p>AI Blackboards & Behavior Trees.</p>
+                            <p>Environmental Query System (EQS).</p>
+                            <p>Humanoid Animation Blending.</p>
+                            <p>Never-ending Level Design.</p>
+                            <p>The course now has high quality hand written subtitles throughout, available as closed captions so you can turn them on or off at your convenience.</p>
+                            <p>This course started as a runaway success on Kickstarter. Get involved now, and get access to all future content as it's added. The final course will be over 50 hours of content and 300+ lectures.</p>
+                            <p>Learn how to create and mod video games using Unreal Engine 4, the free-to-use game development platform used by AAA studios and indie developers worldwide.</p>
+                            <p>We start super simple so you need no prior experience of Unreal or coding! With our online tutorials, you'll be amazed what you can achieve.</p>
+                            <p>Benefit from our world-class support from both other students, and the instructors who are on the forums regularly. Go on to build several games including a tank game, and a First Person Shooter.</p>
+                            <p>You will have access to a course forum where you can discuss topics on a course-wide basis, or down to the individual video. Our thriving discussion forum will help you learn and share ideas with other students.</p>
+                            <p>You will learn C++, the powerful industry standard language from scratch. By the end of the course you'll be very confident in the basics of coding and game development, and hungry to learn more.</p>
+                            <p>"Any serious game programmer needs to know C++"Jason Gregory, Lead Programmer at Naughty Dog (creators of Uncharted & The Last of Us)</p>
+                            <p>Anyone who wants to learn to create games: Unreal Engine is a fantastic platform which enables you to make AAA-quality games. Furthermore these games can be created for Windows, consoles, MacOS, iOS, Android and Web from a single source!</p>
+                            <p>If you're a complete beginner, we'll teach you all the coding and game design principles you'll need. If you're an artist, we'll teach you to bring your assets to life. If you're a coder, we'll teach you game design principles.</p>
+                            <p>What this course DOESN'T cover...</p>
+                            <p>Whereas this course is already huge, we can't possibly cover everything in that time. Here are some things we will not be covering...</p>
+
+                            <h2>Who is the target audience?</h2>
+
+                            <ul class="p-0 m-0 black-doted">
+                                <li>Competent and confident with using a computer.</li>
+                                <li>Artists who want to bring their assets alive in a game engine.</li>
+                                <li>Developers who want to re-skill across to coding.</li>
+                                <li>Complete beginners who are willing to work hard.</li>
+                                <li>Existing programmers who want to re-skill to game development.</li>
+                            </ul>
+                        </div>*@
+
+                    <div class="single-course-accordion-cont mt-3">
+                        <header class="entry-header flex flex-wrap justify-content-between align-items-center">
+                            <h2>Nội dung khóa học</h2>
+
+                            <div class="number-of-lectures"><p style="float: right"> @Model.links.Count Bài học</p></div>
+
+                            @*<div class="total-lectures-time">42:57:42</div>*@
+                        </header><!-- .entry-header -->
+
+                        <div class="entry-contents">
+                            @if (ViewData["Success"] != null)
+                            {
+                                <h2 style="color: red">Đăng ký khóa học thành công</h2>
+                            }
+                            <div class="accordion-wrap type-accordion">
+                                @foreach (var link in Model.links)
+                                {
+                                    <h3 class="entry-title flex flex-wrap justify-content-between align-items-lg-center active">
+                                        <span class="arrow-r"><i class="fa fa-plus"></i><i class="fa fa-minus"></i></span>
+                                        <span class="lecture-group-title">@link.name</span>
+                                        <span class="number-of-lectures"></span>
+                                        <span class="total-lectures-time">@link.longTime</span>
+                                    </h3>
+
+                                    <div class="entry-content">
+                                        <iframe width="560" height="315" src="@link.src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                }
+
+                            </div>
+                        </div><!-- .entry-contents -->
+                    </div><!-- .single-course-accordion-cont  -->
+
+
+
+                </div><!-- .single-course-wrap -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div>

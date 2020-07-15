@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E Learning</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/files/css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="~/files/css/font-awesome.min.css">
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="~/files/css/elegant-fonts.css">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="~/files/css/themify-icons.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="~/files/css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="~/files/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="hero-content">
+        <header class="site-header">
+            <div class="top-header-bar">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+                            <div class="header-bar-email d-flex align-items-center">
+                                <i class="fa fa-envelope"></i><a href="#">haupham99a@gmail.com</a>
+                            </div><!-- .header-bar-email -->
+
+                            <div class="header-bar-text lg-flex align-items-center">
+                                <p><i class="fa fa-phone"></i>0827534715 </p>
+                            </div><!-- .header-bar-text -->
+                        </div><!-- .col -->
+
+                        <div class="col-12 col-lg-6 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+
+
+                            <div class="header-bar-menu" style="margin-right: 100px">
+                                <ul class="flex justify-content-center align-items-center py-2 pt-md-0">
+                                    <li><a href="/login" class="login">Đăng nhập</a></li>
+                                    <li><a href="/register" class="logout">Đăng ký</a></li>
+                                </ul>
+                            </div><!-- .header-bar-menu -->
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- .container-fluid -->
+            </div><!-- .top-header-bar -->
+
+            <div class="nav-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9 col-lg-3">
+                            <div class="site-branding">
+                                <h1 class="site-title"><a asp-controller="home" asp-action="home">Hậu <span>Phạm</span></a></h1>
+                            </div><!-- .site-branding -->
+                        </div><!-- .col -->
+
+                        <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
+                            <nav class="site-navigation flex justify-content-end align-items-center">
+                                <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                    <li class="current-menu-item"><a style="padding-left: 35px" asp-controller="Home" asp-action="home">Home</a></li>
+                                    <li><a asp-controller="Home" asp-action="courses">Courses</a></li>
+                                </ul>
+
+                                <div class="hamburger-menu d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div><!-- .hamburger-menu -->
+
+                                <div class="header-bar-cart">
+                                    <a href="#" class="flex justify-content-center align-items-center"><span aria-hidden="true" class="icon_bag_alt"></span></a>
+                                </div><!-- .header-bar-search -->
+                            </nav><!-- .site-navigation -->
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- .container -->
+            </div><!-- .nav-bar -->
+        </header><!-- .site-header -->
+
+        @RenderSection("hero", required: false)
+    </div><!-- .hero-content -->
+    @RenderBody()
+    <div class="clients-logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
+                    <div class="logo-wrap">
+                        <img src="images/logo-1.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-2.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-3.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-4.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-5.png" alt="">
+                    </div><!-- .logo-wrap -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .clients-logo -->
+    <footer class="site-footer">
+
+        <div class="footer-bar">
+            <div class="container">
+                <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="download-apps flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
+                            <a href="#"><img src="images/app-store.png" alt=""></a>
+                            <a href="#"><img src="images/play-store.png" alt=""></a>
+                        </div><!-- .download-apps -->
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+                        <div class="footer-bar-nav">
+                            <ul class="flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                                <li><a href="#">DPA</a></li>
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div><!-- .footer-bar-nav -->
+                    </div><!-- .col-12 -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-bar -->
+    </footer><!-- .site-footer -->
+
+    <script type='text/javascript' src='~/files/js/jquery.js'></script>
+    <script type='text/javascript' src='~/files/js/swiper.min.js'></script>
+    <script type='text/javascript' src='~/files/js/masonry.pkgd.min.js'></script>
+    <script type='text/javascript' src='~/files/js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='~/files/js/custom.js'></script>
+    <script>
+        $(document).ready(function () {
+
+            const name = document.cookie
+                .split('; ')
+                .find(row => row.startsWith('accountName'))
+                .split('=')[1];
+            const id = document.cookie
+                .split('; ')
+                .find(row => row.startsWith('id'))
+                .split('=')[1];
+            if (name != "") {
+                $(".header-bar-menu").empty();
+                $(".header-bar-menu").html(`<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        ` + name.toUpperCase() + `
+      </button>
+      <div style="left: 0px!important" class="dropdown-menu dropdown-menu-right">
+        <button class="dropdown-item" type="button"><a href="/mycourse/`+ id + `">Khóa học của tôi</a></button>
+        <button class="dropdown-item" type="button"><a href="/logout">Đăng xuất</a></button>
+      </div>
+</div>
+`)
+            } else {
+                $(".header-bar-menu").empty();
+                $(".header-bar-menu").html(`<ul class="flex justify-content-center align-items-center py-2 pt-md-0">
+                                        <li><a href="/login" class="login">Đăng nhập</a></li>
+                                        <li><a href="/register" class="logout">Đăng ký</a></li>
+                                    </ul>`)
+            }
+        })
+    </script>
+    @RenderSection("script", required: false)
+</body>
+</html>
